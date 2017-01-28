@@ -19,7 +19,7 @@ module.exports = ({ types: t }) => {
 
 				attributes.push(
 					makeAttribute(
-						state.file.opts.filename,
+						state.file.opts.sourceFileName,
 						loc.start.line
 					)
 				)
