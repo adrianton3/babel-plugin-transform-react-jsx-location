@@ -1,0 +1,1 @@
+<input id="asd" className="dsa" data-source="test/in/some-attr.js:1" />;
