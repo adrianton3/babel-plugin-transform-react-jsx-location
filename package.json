@@ -4,7 +4,7 @@
   "description": "Adds data- attributes containing source file name and line number",
   "main": "src/index.js",
   "scripts": {
-    "test": "rm -r test/out && babel test/in --out-dir test/out && diff -r test/out test/expected"
+    "test": "rm -rf test/out && babel test/in --out-dir test/out && diff -r test/out test/expected"
   },
   "repository": {
     "type" : "git",
