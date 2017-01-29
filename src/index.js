@@ -10,6 +10,18 @@ module.exports = ({ types: t }) => {
 		)
 	}
 
+	function resolveFilename ({ filename, sourceRoot }) {
+		if (!filename || filename === 'unknown') {
+			return 'unknown'
+		}
+
+		if (sourceRoot) {
+			return filename.slice(sourceRoot.length)
+		}
+
+		return filename
+	}
+
 	return {
 		visitor: {
 			JSXOpeningElement (path, state) {
@@ -19,7 +31,7 @@ module.exports = ({ types: t }) => {
 
 				attributes.push(
 					makeAttribute(
-						state.file.opts.sourceFileName,
+						resolveFilename(state.file.opts),
 						loc.start.line
 					)
 				)
