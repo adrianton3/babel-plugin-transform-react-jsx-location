@@ -10,9 +10,13 @@ module.exports = ({ types: t }) => {
 		)
 	}
 
-	function resolveFilename ({ filename, sourceRoot }) {
+	function resolveFilename ({ filename, sourceRoot, basename }, opts) {
 		if (!filename || filename === 'unknown') {
 			return 'unknown'
+		}
+
+		if (opts.filename === 'compact') {
+			return basename
 		}
 
 		if (sourceRoot) {
@@ -31,7 +35,7 @@ module.exports = ({ types: t }) => {
 
 				attributes.push(
 					makeAttribute(
-						resolveFilename(state.file.opts),
+						resolveFilename(state.file.opts, state.opts),
 						loc.start.line
 					)
 				)
