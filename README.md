@@ -31,7 +31,8 @@ npm install babel-plugin-transform-react-jsx-location
 {
   "plugins": [
   	["transform-react-jsx-location", { 
-  	    "filename": "compact"
+  	    "filename": "compact",
+  	    "attributeName": "source"
     }]
   ]
 }
