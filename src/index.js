@@ -1,11 +1,9 @@
 'use strict'
 
-const attributeName = 'data-source'
-
 module.exports = ({ types: t }) => {
-	function makeAttribute (fileName, lineNumber) {
+	function makeAttribute (fileName, lineNumber, attributeName='source') {
 		return t.jSXAttribute(
-			t.jSXIdentifier(attributeName),
+			t.jSXIdentifier(`data-${attributeName}`),
 			t.stringLiteral(`${fileName}:${lineNumber}`)
 		)
 	}
@@ -36,7 +34,8 @@ module.exports = ({ types: t }) => {
 				attributes.push(
 					makeAttribute(
 						resolveFilename(state.file.opts, state.opts),
-						loc.start.line
+						loc.start.line,
+						state.opts.attributeName
 					)
 				)
 			}
