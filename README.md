@@ -8,6 +8,9 @@ page/app. Simply right click on an element in your favourite browser,
 then hit *Inspect* and the location of the source is revealed in the 
 `data-source` attribute.
 
+This plugin is intended to help with debugging while developing; 
+**use in production is not recommended!**
+
 ![data-source attributes can be viewed in the elements inspector](https://cloud.githubusercontent.com/assets/1701763/22403856/ca7ba990-e624-11e6-98b2-49c97355e22d.png)
 *elements inspector for the [mzabriskie/react-example](https://github.com/mzabriskie/react-example) app*
 
