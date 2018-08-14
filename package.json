@@ -1,10 +1,10 @@
 {
   "name": "babel-plugin-transform-react-jsx-location",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Adds data- attributes containing source file name and line number",
   "main": "lib/index.js",
   "scripts": {
-    "prepublish": "babel src --out-dir lib",
+    "prepare": "babel src --out-dir lib",
     "test": "rm -rf test/out && babel test/in --out-dir test/out && diff -r test/out test/expected"
   },
   "repository": {
@@ -26,8 +26,6 @@
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-es2016": "^6.22.0",
-    "babel-preset-es2017": "^6.22.0"
+    "babel-preset-env": "^1.7.0"
   }
 }

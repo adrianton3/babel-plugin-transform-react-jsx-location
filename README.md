@@ -35,7 +35,8 @@ npm install babel-plugin-transform-react-jsx-location
   "plugins": [
   	["transform-react-jsx-location", { 
   	    "filename": "compact",
-  	    "attributeName": "source"
+  	    "attributeName": "source",
+  	    "exclude": ["div"] // defaults to ["Fragment"]
     }]
   ]
 }

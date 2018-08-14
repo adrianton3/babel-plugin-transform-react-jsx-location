@@ -27,9 +27,14 @@ module.exports = ({ types: t }) => {
 	return {
 		visitor: {
 			JSXOpeningElement (path, state) {
-				const { attributes, loc } = path.container.openingElement
+				const defaultExclude = ['Fragment']
+				const tagsToExclude = Array.isArray(state.opts.exclude)
+					? [...state.opts.exclude, ...defaultExclude]
+					: defaultExclude
 
-				if (!loc) { return }
+                const { attributes, loc, name } = path.container.openingElement
+
+				if (!loc || tagsToExclude.includes(name.name)) { return }
 
 				attributes.push(
 					makeAttribute(
